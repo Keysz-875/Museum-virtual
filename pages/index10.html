@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Sultan Maulana Hasanuddin - Museum Banten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fef9f0, #f5e8d0);
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio-header {
+            background: linear-gradient(135deg, #7a4a1f, #4a2a0f);
+            color: white;
+            padding: 18px 15px;
+            text-align: center;
+        }
+
+        .bio-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .bio-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .bio-content {
+            padding: 16px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 180px;
+            max-width: 60%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: #e0d0b8;
+            margin: 0 auto;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .profile-info {
+            width: 100%;
+        }
+
+        .info-item {
+            background: #fffaf2;
+            border-radius: 10px;
+            padding: 6px 10px;
+            margin-bottom: 8px;
+            border-left: 4px solid #7a4a1f;
+            font-size: 0.85rem;
+        }
+
+        .info-item .label {
+            font-weight: bold;
+            color: #7a4a1f;
+            margin-right: 6px;
+        }
+
+        .card {
+            background: #fffaf2;
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            border-left: 5px solid #7a4a1f;
+        }
+
+        .card h2 {
+            color: #7a4a1f;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card p {
+            color: #4a2a0f;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .card li {
+            color: #4a2a0f;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: #7a4a1f;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #4a2a0f;
+            transform: translateY(-2px);
+        }
+
+        .btn-back {
+            background: #6c757d;
+        }
+
+        .btn-back:hover {
+            background: #495057;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .bio-header {
+                padding: 25px 20px;
+            }
+
+            .bio-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .bio-header p {
+                font-size: 0.9rem;
+            }
+
+            .bio-content {
+                padding: 25px;
+            }
+
+            .profile {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 25px;
+                margin-bottom: 25px;
+            }
+
+            .profile-img {
+                width: 220px;
+                max-width: none;
+                margin: 0;
+            }
+
+            .profile-info {
+                flex: 1;
+            }
+
+            .info-item {
+                padding: 8px 12px;
+                margin-bottom: 10px;
+                font-size: 0.9rem;
+            }
+
+            .card {
+                padding: 18px 22px;
+                margin-bottom: 20px;
+            }
+
+            .card h2 {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+
+            .card p,
+            .card li {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .nav-buttons {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 15px;
+                margin-top: 25px;
+            }
+
+            .btn {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .bio-content {
+                padding: 30px;
+            }
+
+            .card p,
+            .card li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bio-header">
+            <h1>Sultan Maulana Hasanuddin</h1>
+            <p>Pendiri Kesultanan Banten • Sultan Banten Pertama</p>
+        </div>
+
+        <div class="bio-content">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="../src/SMH.jpeg" alt="Sultan Maulana Hasanuddin" onerror="this.src='https://via.placeholder.com/300x400?text=Sultan+Maulana+Hasanuddin'">
+                </div>
+                <div class="profile-info">
+                    <div class="info-item"><span class="label">Nama Lain:</span> Pangeran Sabakingking, Pangeran Surosowan</div>
+                    <div class="info-item"><span class="label">Gelar:</span> Sultan Maulana Hasanuddin</div>
+                    <div class="info-item"><span class="label">Berkuasa:</span> 1552 - 1570 M</div>
+                    <div class="info-item"><span class="label">Pendahulu:</span> Jabatan baru (pendiri)</div>
+                    <div class="info-item"><span class="label">Penerus:</span> Maulana Yusuf</div>
+                    <div class="info-item"><span class="label">Kelahiran:</span> 1478 M</div>
+                    <div class="info-item"><span class="label">Kematian:</span> 1570 M (umur 91-92 tahun)</div>
+                    <div class="info-item"><span class="label">Ayah:</span> Sunan Gunung Jati</div>
+                    <div class="info-item"><span class="label">Pemakaman:</span> Masjid Agung Banten, Serang</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>👑 Pendiri Kesultanan Banten</h2>
+                <p>Maulana Hasanuddin merupakan pendiri sekaligus sultan pertama dari Kesultanan Banten. Ia mendirikan Kesultanan Banten pada tahun 1527 setelah merebut wilayah Banten Girang dari Pucuk Umun. Banten Girang kemudian menjadi wilayah pertama dari Kesultanan Banten.</p>
+            </div>
+
+            <div class="card">
+                <h2>🏛️ Pembangunan Tiga Institusi Penting</h2>
+                <p>Di kawasan teluk Banten, Maulana Hasanuddin membangun tiga institusi penting sebagai motor perubahan kerajaannya:</p>
+                <ul>
+                    <li><strong>Masjid</strong> - sebagai basis kegiatan sosial keagamaan</li>
+                    <li><strong>Keraton Surosowan</strong> - pusat pemerintahan (karenanya ia juga dikenal sebagai Pangeran Surosowan)</li>
+                    <li><strong>Pelabuhan</strong> - sentra ekonomi</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>⚓ Kejayaan Maritim & Perdagangan</h2>
+                <p>Di tangan Sultan Maulana Hasanuddin, Banten dikenal sebagai bandar besar yang menjadi persinggahan utama dan penghubung antara pedagang dari Arab, Parsi, India dan Tiongkok dengan negara-negara di Nusantara. Kesultanan Banten juga menguasai Lampung yang banyak menghasilkan rempah-rempah.</p>
+                <p>Di era pemerintahannya pula, Banten berhasil melepaskan diri dari Demak pada tahun 1568 M.</p>
+            </div>
+
+            <div class="card">
+                <h2>📈 Perkembangan Pesat</h2>
+                <p>Di bawah pemerintahannya, Kesultanan Banten mengalami perkembangan pesat di berbagai bidang. Kesultanan Banten adalah kerajaan maritim yang mengandalkan perdagangan untuk menopang perekonomian kerajaan. Untuk memudahkan hubungan dagang dengan pesisir Sumatera melalui Selat Sunda, pusat pemerintahannya dipindahkan dari pedalaman Banten Girang ke pesisir.</p>
+            </div>
+
+            <div class="card">
+                <h2>🕋 Wafat</h2>
+                <p>Sultan Maulana Hasanuddin wafat pada tahun 1570 M. Ia dimakamkan di Masjid Agung Banten, Serang. Beliau digantikan oleh putranya, Maulana Yusuf.</p>
+            </div>
+
+            <div class="card">
+                <h2>📚 Sumber</h2>
+                <p>Manuskrip dan catatan sejarah Kesultanan Banten, serta berbagai sumber sejarah lainnya.</p>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="btn btn-back" onclick="window.location.href='bio1.html'">← Kembali: Sunan Gunung Jati</button>
+                <button class="btn" onclick="window.location.href='zona1.html'">Ke Zona 1 →</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
