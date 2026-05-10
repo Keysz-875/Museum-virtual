@@ -3,115 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum Virtual Kerajaan Banten</title>
-    <link rel="stylesheet" href="beranda.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Koleksi - Museum Virtual Banten</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fef9f0, #f5e8d0);
+            padding: 12px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .koleksi-header {
+            background: linear-gradient(135deg, #7a4a1f, #4a2a0f);
+            color: white;
+            padding: 18px 15px;
+            text-align: center;
+        }
+
+        .koleksi-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .koleksi-header p {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        .koleksi-content {
+            padding: 16px;
+        }
+
+        /* Grid untuk koleksi */
+        .koleksi-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .koleksi-item {
+            background: #fffaf2;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .koleksi-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .koleksi-img {
+            width: 100%;
+            background: #e0d0b8;
+            overflow: hidden;
+        }
+
+        .koleksi-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        .koleksi-info {
+            padding: 14px 16px;
+        }
+
+        .koleksi-info h3 {
+            color: #7a4a1f;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .koleksi-info p {
+            color: #4a2a0f;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Tombol Kembali */
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            gap: 15px;
+        }
+
+        .btn {
+            background: #7a4a1f;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #4a2a0f;
+            transform: translateY(-2px);
+        }
+
+        .btn-back {
+            background: #6c757d;
+        }
+
+        .btn-back:hover {
+            background: #495057;
+        }
+
+        /* RESPONSIVE MOBILE */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .koleksi-header {
+                padding: 14px 12px;
+            }
+
+            .koleksi-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .koleksi-header p {
+                font-size: 0.75rem;
+            }
+
+            .koleksi-content {
+                padding: 12px;
+            }
+
+            .koleksi-info {
+                padding: 10px 12px;
+            }
+
+            .koleksi-info h3 {
+                font-size: 1rem;
+            }
+
+            .koleksi-info p {
+                font-size: 0.8rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .koleksi-header {
+                padding: 25px 20px;
+            }
+
+            .koleksi-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .koleksi-header p {
+                font-size: 0.9rem;
+            }
+
+            .koleksi-content {
+                padding: 25px;
+            }
+
+            .koleksi-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 25px;
+            }
+
+            .koleksi-info {
+                padding: 14px 18px;
+            }
+
+            .koleksi-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .koleksi-info p {
+                font-size: 0.9rem;
+            }
+
+            .nav-buttons {
+                flex-direction: row;
+            }
+
+            .btn {
+                padding: 10px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Tampilan khusus untuk dua foto Masjid Agung Banten bersebelahan di desktop */
+        @media (min-width: 768px) {
+            .koleksi-item:has(h3) {
+                /* styling normal */
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="koleksi-header">
+            <h1>Koleksi Museum</h1>
+            <p>Peninggalan Sejarah Kesultanan Banten</p>
+        </div>
 
-    <!-- ========== DESKTOP NAVBAR ========== -->
-    <nav class="navbar-desktop">
-        <div class="nav-left">
-            <img src="src/logo.png" alt="Logo" class="logo">
-            <span class="nav-title">Museum Banten</span>
-        </div>
-        <div class="nav-right">
-            <button class="nav-btn" onclick="location.href='index7.html'">Sumber</button>
-            <button class="nav-btn" onclick="location.href='index8.html'">Koleksi</button>
-            <i class="fas fa-search search-icon" onclick="alert('Fitur pencarian akan segera hadir')"></i>
-        </div>
-    </nav>
+        <div class="koleksi-content">
+            <div class="koleksi-grid">
+                <!-- 1. Patung Sunan Gunung Jati -->
+                <div class="koleksi-item">
+                    <div class="koleksi-img">
+                        <img src="../src/patung.jpg" alt="Patung Sunan Gunung Jati" onerror="this.src='https://via.placeholder.com/400x300?text=Patung+Sunan+Gunung+Jati'">
+                    </div>
+                    <div class="koleksi-info">
+                        <h3>Patung Sunan Gunung Jati</h3>
+                        <p>Patung Syarif Hidayatullah atau Sunan Gunung Jati, pendiri Kesultanan Cirebon dan penyebar Islam di Jawa Barat.</p>
+                    </div>
+                </div>
 
-    <!-- ========== MOBILE NAVBAR ========== -->
-    <div class="navbar-mobile">
-        <div class="mobile-header">
-            <div class="menu-toggle" onclick="toggleMobileMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <!-- 2. Patung Sultan Maulana Hasanuddin -->
+                <div class="koleksi-item">
+                    <div class="koleksi-img">
+                        <img src="../src/patung1.jpg" alt="Patung Sultan Maulana Hasanuddin" onerror="this.src='https://via.placeholder.com/400x300?text=Patung+Sultan+Maulana+Hasanuddin'">
+                    </div>
+                    <div class="koleksi-info">
+                        <h3>Patung Sultan Maulana Hasanuddin</h3>
+                        <p>Sultan pertama Kesultanan Banten yang memerintah tahun 1552-1570. Pendiri Keraton Surosowan dan pusat perdagangan Banten.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Diorama Pelabuhan Banten -->
+                <div class="koleksi-item">
+                    <div class="koleksi-img">
+                        <img src="../src/mcKapal.jpg" alt="Diorama Pelabuhan Banten" onerror="this.src='https://via.placeholder.com/400x300?text=Diorama+Pelabuhan+Banten'">
+                    </div>
+                    <div class="koleksi-info">
+                        <h3>Diorama Pelabuhan Banten</h3>
+                        <p>Pelabuhan Karangantu, pusat perdagangan lada internasional yang menghubungkan Banten dengan pedagang Arab, Persia, India, China, dan Eropa.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Diorama Klenteng -->
+                <div class="koleksi-item">
+                    <div class="koleksi-img">
+                        <img src="../src/klenteng.jpg" alt="Diorama Klenteng" onerror="this.src='https://via.placeholder.com/400x300?text=Diorama+Klenteng'">
+                    </div>
+                    <div class="koleksi-info">
+                        <h3>Diorama Klenteng</h3>
+                        <p>Bukti toleransi Kesultanan Banten terhadap etnis Tionghoa. Klenteng ini dibangun pada masa Kesultanan sebagai tempat ibadah bagi pedagang China.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Masjid Agung Banten (Foto 1) -->
+                <div class="koleksi-item">
+                    <div class="koleksi-img">
+                        <img src="../src/masjid.jpg" alt="Masjid Agung Banten - 1" onerror="this.src='https://via.placeholder.com/400x300?text=Masjid+Agung+Banten'">
+                    </div>
+                    <div class="koleksi-info">
+                        <h3>Masjid Agung Banten (1)</h3>
+                        <p>Masjid bersejarah peninggalan Kesultanan Banten dengan arsitektur perpaduan Jawa, Eropa, dan China. Dibangun pada masa Sultan Maulana Hasanuddin.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Masjid Agung Banten (Foto 2) -->
+                <div class="koleksi-item">
+                    <div class="koleksi-img">
+                        <img src="../src/masjid1.jpg" alt="Masjid Agung Banten - 2" onerror="this.src='https://via.placeholder.com/400x300?text=Masjid+Agung+Banten'">
+                    </div>
+                    <div class="koleksi-info">
+                        <h3>Masjid Agung Banten (2)</h3>
+                        <p>Pemandangan lain dari Masjid Agung Banten, salah satu peninggalan Kesultanan Banten yang masih berdiri kokoh hingga saat ini.</p>
+                    </div>
+                </div>
             </div>
-            <div class="mobile-logo">
-                <img src="src/logo.png" alt="Logo" class="logo-small">
-                <span class="mobile-title">Museum Banten</span>
+
+            <!-- Tombol Navigasi -->
+            <div class="nav-buttons">
+                <button class="btn btn-back" onclick="window.location.href='../index.html'">← Kembali ke Beranda</button>
+                <button class="btn" onclick="window.location.href='index7.html'">Sumber →</button>
             </div>
-            <i class="fas fa-search mobile-search" onclick="alert('Fitur pencarian akan segera hadir')"></i>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <button class="mobile-nav-btn" onclick="location.href='index7.html'">Sumber</button>
-            <button class="mobile-nav-btn" onclick="location.href='index8.html'">Koleksi</button>
         </div>
     </div>
-
-    <!-- ========== HERO SECTION ========== -->
-    <header>
-        <div class="hero-bg">
-            <img src="../src/masjid.jpg" alt="Masjid Agung Banten">
-        </div>
-        <div class="hero-content">
-            <h1>Museum Virtual<br>Kerajaan Banten</h1>
-            <p>Menjelajahi Kejayaan Islam di Nusantara</p>
-        </div>
-    </header>
-
-    <!-- ========== MAIN CONTENT ========== -->
-    <main>
-        <section class="welcome">
-            <h2>Selamat Datang</h2>
-            <p>Museum ini menyajikan sejarah lengkap Kerajaan Banten—dari awal berdiri, masa kejayaan, hingga keruntuhan. Jelajahi 5 zona pameran dan area interaktif untuk memahami warisan budaya Banten.</p>
-        </section>
-
-        <section class="zona">
-            <h2>Zona Pameran</h2>
-            <div class="zona-grid">
-                <div class="zona-card">
-                    <i class="fas fa-flag-checkered"></i>
-                    <h3>Zona 1</h3>
-                    <p>Sejarah Awal & Pendiri</p>
-                    <button onclick="location.href='index1.html'">Kunjungi</button>
-                </div>
-                <div class="zona-card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Zona 2</h3>
-                    <p>Sistem Pemerintahan & Wali Songo</p>
-                    <button onclick="location.href='index2.html'">Kunjungi</button>
-                </div>
-                <div class="zona-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Zona 3</h3>
-                    <p>Ekonomi & Perdagangan</p>
-                    <button onclick="location.href='index3.html'">Kunjungi</button>
-                </div>
-                <div class="zona-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Zona 4</h3>
-                    <p>Sosial & Budaya</p>
-                    <button onclick="location.href='index4.html'">Kunjungi</button>
-                </div>
-                <div class="zona-card">
-                    <i class="fas fa-landmark"></i>
-                    <h3>Zona 5</h3>
-                    <p>Peninggalan & Kolonial</p>
-                    <button onclick="location.href='index5.html'">Kunjungi</button>
-                </div>
-                <div class="zona-card interaktif">
-                    <i class="fas fa-tv"></i>
-                    <h3>Zona Interaktif</h3>
-                    <p>Ruang Audio Visual & Kuis</p>
-                    <button onclick="location.href='index6.html'">Kunjungi</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <p>© 2025 Kelompok 6 | Museum Virtual Kerajaan Banten | Kelas X.8</p>
-    </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        }
-    </script>
 </body>
-                                                          </html>
+</html>
